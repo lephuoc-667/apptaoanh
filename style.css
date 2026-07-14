@@ -1,0 +1,88 @@
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+.container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    width: 100%;
+    max-width: 550px;
+}
+h1 {
+    color: #333;
+    text-align: center;
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+.form-group {
+    margin-bottom: 18px;
+}
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #444;
+}
+select, input[type="text"], input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+.radio-group {
+    display: flex;
+    gap: 20px;
+}
+.wedding-info-group {
+    background: #fff5f5;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px dashed #ff8787;
+    display: none;
+}
+.wedding-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+.readonly-input {
+    background: #e9ecef;
+    cursor: not-allowed;
+}
+.custom-file-upload {
+    display: block;
+    padding: 12px;
+    background: #f8f9fa;
+    border: 2px dashed #bbb;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+}
+#bgUpload { display: none; }
+.btn-export {
+    width: 100%;
+    padding: 15px;
+    background: #222;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.btn-export:hover { background: #444; }
+#previewCanvas {
+    max-width: 100%;
+    margin-top: 20px;
+    border-radius: 8px;
+    display: none;
+}
