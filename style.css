@@ -1,88 +1,160 @@
+:root {
+    --primary: #d4af37; /* Màu vàng Gold sang trọng */
+    --bg: #111;
+    --card: #1a1a1a;
+    --text: #ffffff;
+}
+
 body {
     font-family: 'Segoe UI', system-ui, sans-serif;
-    background: #f0f2f5;
+    background: var(--bg);
+    color: var(--text);
     margin: 0;
     padding: 20px;
     display: flex;
     justify-content: center;
 }
+
 .container {
-    background: #ffffff;
+    background: var(--card);
     padding: 30px;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border-radius: 20px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     width: 100%;
     max-width: 550px;
 }
+
 h1 {
-    color: #333;
+    color: var(--primary);
     text-align: center;
-    font-size: 22px;
-    letter-spacing: 1px;
+    font-size: 24px;
+    letter-spacing: 1.5px;
+    margin-bottom: 25px;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
 }
+
 .form-group {
-    margin-bottom: 18px;
+    margin-bottom: 20px;
 }
+
 label {
     display: block;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     font-weight: 600;
-    color: #444;
+    font-size: 14px;
+    color: #ccc;
 }
+
 select, input[type="text"], input[type="date"] {
     width: 100%;
     padding: 12px;
-    border: 1px solid #ccc;
+    border: 1px solid #333;
+    background: #252525;
+    color: #fff;
     border-radius: 8px;
     font-size: 15px;
     box-sizing: border-box;
+    transition: border-color 0.3s;
 }
+
+select:focus, input:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+
 .radio-group {
     display: flex;
     gap: 20px;
 }
-.wedding-info-group {
-    background: #fff5f5;
-    padding: 15px;
-    border-radius: 8px;
-    border: 1px dashed #ff8787;
-    display: none;
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    cursor: pointer;
 }
+
+/* Các khung thông tin phụ thêm hiệu ứng */
+.info-card {
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: none;
+    animation: slideDown 0.3s ease;
+}
+
+.wedding-info-group {
+    background: rgba(231, 76, 60, 0.05);
+    border-color: rgba(231, 76, 60, 0.2);
+}
+
+.conference-info-group {
+    background: rgba(44, 62, 80, 0.2);
+    border-color: rgba(52, 152, 219, 0.2);
+}
+
 .wedding-inputs {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 15px;
 }
+
 .readonly-input {
-    background: #e9ecef;
+    background: #121212 !important;
+    color: #888 !important;
+    border-color: #222 !important;
     cursor: not-allowed;
 }
+
 .custom-file-upload {
     display: block;
-    padding: 12px;
-    background: #f8f9fa;
-    border: 2px dashed #bbb;
+    padding: 15px;
+    background: #222;
+    border: 2px dashed #444;
     text-align: center;
     border-radius: 8px;
     cursor: pointer;
+    color: #888;
+    transition: all 0.3s;
 }
+
+.custom-file-upload:hover {
+    border-color: var(--primary);
+    color: #fff;
+}
+
 #bgUpload { display: none; }
+
 .btn-export {
     width: 100%;
-    padding: 15px;
-    background: #222;
-    color: #fff;
+    padding: 16px;
+    background: linear-gradient(135deg, #d4af37, #aa7c11);
+    color: #000;
     border: none;
     border-radius: 8px;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 15px;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
-.btn-export:hover { background: #444; }
+
+.btn-export:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+}
+
 #previewCanvas {
     max-width: 100%;
-    margin-top: 20px;
-    border-radius: 8px;
+    margin-top: 25px;
+    border-radius: 12px;
+    border: 1px solid #333;
     display: none;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
