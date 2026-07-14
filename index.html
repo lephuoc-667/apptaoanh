@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trình Tạo Ảnh Sự Kiện Cần Thơ Professional</title>
+    <title>Trình Thiết Kế Sự Kiện & Tiệc Cưới Cần Thơ</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,8 +14,12 @@
     <div class="form-group">
         <label>Kích thước ảnh:</label>
         <div class="radio-group">
-            <label class="radio-label"><input type="radio" name="aspectRatio" value="16:9" checked> 16:9 (Ngang)</label>
-            <label class="radio-label"><input type="radio" name="aspectRatio" value="9:16"> 9:16 (Dọc)</label>
+            <label class="radio-label">
+                <input type="radio" name="aspectRatio" value="16:9"> 16:9 (Ngang)
+            </label>
+            <label class="radio-label">
+                <input type="radio" name="aspectRatio" value="9:16" checked> 9:16 (Dọc)
+            </label>
         </div>
     </div>
 
@@ -32,12 +36,17 @@
         </select>
     </div>
 
-    <div id="weddingGroup" class="form-group wedding-info-group">
-        <label>Thông tin Cô Dâu & Chú Rể:</label>
+    <div id="weddingGroup" class="form-group info-card wedding-info-group">
+        <label style="color: #e74c3c;">❤️ Tên Tân Lang & Tân Nương:</label>
         <div class="wedding-inputs">
-            <input type="text" id="groomName" placeholder="Tên Chú Rể (Tân Lang)">
-            <input type="text" id="brideName" placeholder="Tên Cô Dâu (Tân Nương)">
+            <input type="text" id="groomName" placeholder="Tên Chú Rể">
+            <input type="text" id="brideName" placeholder="Tên Cô Dâu">
         </div>
+    </div>
+
+    <div id="conferenceGroup" class="form-group info-card conference-info-group">
+        <label style="color: #2c3e50;">📝 Nội dung / Chủ đề chi tiết:</label>
+        <input type="text" id="conferenceContent" placeholder="Nhập tiêu đề cuộc họp, ví dụ: Chuyển đổi số doanh nghiệp">
     </div>
 
     <div class="form-group">
@@ -46,11 +55,11 @@
     </div>
 
     <div class="form-group">
-        <label>Địa điểm tỉnh/thành:</label>
+        <label>Địa điểm chính:</label>
         <input type="text" value="Cần Thơ" readonly class="readonly-input">
     </div>
 
-    <div class="form-group">
+    <div class="form-group" id="hallGroup">
         <label for="hall">Vị trí sảnh / Phòng tổ chức:</label>
         <select id="hall">
             <option value="SẢNH RUBY - TẦNG 1">SẢNH RUBY - TẦNG 1</option>
@@ -70,7 +79,7 @@
         <input type="file" id="bgUpload" accept="image/*">
     </div>
 
-    <button class="btn-export" id="btnExport">🚀 XUẤT ẢNH CHẤT LƯỢNG CAO</button>
+    <button class="btn-export" id="btnExport">🚀 XUẤT ẢNH NGHỆ THUẬT CHẤT LƯỢNG CAO</button>
 
     <div class="preview-container">
         <canvas id="previewCanvas"></canvas>
