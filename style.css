@@ -158,3 +158,24 @@ select:focus, input:focus {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+.btn-ai-helper {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    color: #e8a7a1;
+    border: 1px dashed #e8a7a1;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: all 0.3s;
+}
+
+.btn-ai-helper:hover {
+    background: rgba(232, 167, 161, 0.1);
+    border-style: solid;
+    box-shadow: 0 0 10px rgba(232, 167, 161, 0.2);
+    transform: translateY(-1s px);
+}
