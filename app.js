@@ -198,17 +198,57 @@ document.getElementById('btnExport').addEventListener('click', function() {
 });
 
 // Hàm vẽ hoa văn góc & khung viền nghệ thuật màu vàng Gold
+// Hàm vẽ hoa văn góc & khung viền nghệ thuật màu vàng Gold
 function drawArtOrnaments(ctx, width, height) {
     const margin = 100;
     
-    // Vẽ viền kép mĩ thuật bao quanh
-    ctx.strokeStyle = "rgba(212, 175, 55, 0.25)";
-    ctx.lineWidth = 4;
-    ctx.strokeRect(margin, margin, width - margin * 2, height - margin * 2);
+    // === ĐÃ BỎ VIỀN KÉP GIÚP THIỆP THOÁNG HƠN ===
 
-    ctx.strokeStyle = "rgba(212, 175, 55, 0.6)";
-    ctx.lineWidth = 8;
-    ctx.strokeRect(margin + 20, margin + 20, width - (margin + 20) * 2, height - (margin + 20) * 2);
+    // Vẽ hoa văn lá nghệ thuật ở 4 góc (Bố cục "Banana Leaf/Floral" trừu tượng)
+    const corners = [
+        { x: margin + 20, y: margin + 20, scaleX: 1, scaleY: 1 }, // Trên trái
+        { x: width - (margin + 20), y: margin + 20, scaleX: -1, scaleY: 1 }, // Trên phải
+        { x: margin + 20, y: height - (margin + 20), scaleX: 1, scaleY: -1 }, // Dưới trái
+        { x: width - (margin + 20), y: height - (margin + 20), scaleX: -1, scaleY: -1 } // Dưới phải
+    ];
+
+    corners.forEach(corner => {
+        ctx.save();
+        ctx.translate(corner.x, corner.y);
+        ctx.scale(corner.scaleX, corner.scaleY);
+
+        // Vẽ 3 tầng cánh hoa văn lá cong nghệ thuật màu vàng Gold cổ điển
+        ctx.strokeStyle = "#dfb76c";
+        ctx.lineWidth = 6;
+        ctx.fillStyle = "#dfb76c";
+
+        // Cuống lá/Nhành góc chính
+        ctx.beginPath();
+        ctx.arc(0, 0, 80, Math.PI, Math.PI * 1.5);
+        ctx.stroke();
+
+        // Lá 1 (Lớn)
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.quadraticCurveTo(120, 30, 150, 150);
+        ctx.quadraticCurveTo(30, 120, 0, 0);
+        ctx.stroke();
+
+        // Lá 2 (Trực quan giống dáng lá chuối nghệ thuật uốn cong)
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.quadraticCurveTo(180, -20, 220, 80);
+        ctx.quadraticCurveTo(80, 80, 0, 0);
+        ctx.stroke();
+
+        // Khớp tâm góc
+        ctx.beginPath();
+        ctx.arc(0, 0, 25, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.restore();
+    });
+}
 
     // Vẽ hoa văn lá nghệ thuật ở 4 góc (Bố cục "Banana Leaf/Floral" trừu tượng)
     const corners = [
